@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sami Runsas">
+    <meta name="keywords" content="compression software, NanoZip, file archiver">
+    <meta name="description" content="NanoZip - High-performance file compression software">
+    <title>NanoZip - Advanced File Compression</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f8f9fa;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+        .footer a {
+            color: #fff;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NanoZip</h1>
+        <p>High-performance file compression software</p>
+    </header>
+
+    <div class="container">
+        <section id="nanozip">
+            <h2>About NanoZip</h2>
+            <p>
+                NanoZip is an experimental file archiver software that incorporates several original file compression algorithms. 
+                It is designed for high data compression efficiency and includes many experimental features, such as fine-grained 
+                parallel compression algorithms.
+            </p>
+        </section>
+
+        <section id="download">
+            <h2>Download</h2>
+            <p>
+                The latest version of NanoZip (2011) is available for 32-bit and 64-bit Windows and Linux systems. 
+                The Windows version includes both a graphical user interface and a command-line interface, while 
+                the Linux versions are command-line only.
+            </p>
+            <ul>
+                <li><a href="nanozip-0.09a.win32.zip">nanozip-0.09a.win32.zip</a> (SHA256: d7b43d2f fecb19e2 ba36c5e5 da8cca6e c254f07b 3c132779 c3b82a2a 2bd8f114)</li>
+                <li><a href="nanozip-0.09a.win64.zip">nanozip-0.09a.win64.zip</a> (SHA256: 0bc7cfd0 5dec5417 d04d397c 937baf44 d0e4897d 97ae16c1 7ed8b130 c754d276)</li>
+                <li><a href="nanozip-0.09a.linux32.zip">nanozip-0.09a.linux32.zip</a> (SHA256: db94977e 80bbab02 d122e7bd 6f6f83c7 767931a4 014bde8e ef1b2a5a 9ae7dde1)</li>
+                <li><a href="nanozip-0.09a.linux64.zip">nanozip-0.09a.linux64.zip</a> (SHA256: e66dd3f9 e0a1da91 37a1483c 36c9979f 3ff1dbf1 175876a0 47504ee4 ff4b2cd7)</li>
+            </ul>
+        </section>
+
+        <section id="performance">
+            <h2>Performance</h2>
+            <p>
+                NanoZip offers excellent compression performance across a wide range of file types. Below are some 
+                performance comparisons for different types of data:
+            </p>
+
+            <h3>Linux Binary Distribution (500 MB)</h3>
+            <table>
+                <tr>
+                    <th>Compressor</th>
+                    <th>Compressed Size (MB)</th>
+                    <th>Compression Time (s)</th>
+                    <th>Decompression Time (s)</th>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cc</td>
+                    <td>73</td>
+                    <td>724</td>
+                    <td>722</td>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cO</td>
+                    <td>83</td>
+                    <td>164</td>
+                    <td>37</td>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -co</td>
+                    <td>91</td>
+                    <td>67</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>uharc 0.6b -mx</td>
+                    <td>96</td>
+                    <td>448</td>
+                    <td>363</td>
+                </tr>
+                <tr>
+                    <td>7-zip 9.12 -mx</td>
+                    <td>99</td>
+                    <td>187</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cD</td>
+                    <td>117</td>
+                    <td>23</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>rar 4.2 -m5</td>
+                    <td>117</td>
+                    <td>41</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cd</td>
+                    <td>131</td>
+                    <td>6.5</td>
+                    <td>1.9</td>
+                </tr>
+                <tr>
+                    <td>gzip 1.3.3 -9</td>
+                    <td>159</td>
+                    <td>84</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cf</td>
+                    <td>169</td>
+                    <td>1.9</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>gzip 1.3.3 -3</td>
+                    <td>170</td>
+                    <td>15</td>
+                    <td>5</td>
+                </tr>
+            </table>
+            <p>
+                The '-cO' algorithm in NanoZip is the strongest known asymmetric compression algorithm. No other algorithm decompresses faster at this compression ratio.
+                See <a href="http://compressionratings.com">thorough compression comparison</a> with other file compressors.
+            </p>
+        </section>
+
+        <section id="audio-compression">
+            <h2>Audio Compression</h2>
+            <p>
+                NanoZip has special algorithms for compressing audio data. Below is a comparison of NanoZip with other popular audio compressors:
+            </p>
+            <table>
+                <tr>
+                    <th>Compressor</th>
+                    <th>Compressed Size (MB)</th>
+                    <th>Compression Time (s)</th>
+                    <th>Decompression Time (s)</th>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cd</td>
+                    <td>123</td>
+                    <td>9.3</td>
+                    <td>7.2</td>
+                </tr>
+                <tr>
+                    <td>flac 1.2.1 -8</td>
+                    <td>124</td>
+                    <td>28</td>
+                    <td>3.4</td>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cf</td>
+                    <td>128</td>
+                    <td>3.1</td>
+                    <td>3.1</td>
+                </tr>
+                <tr>
+                    <td>flac 1.2.1 -1</td>
+                    <td>134</td>
+                    <td>4.1</td>
+                    <td>3.2</td>
+                </tr>
+            </table>
+            <p>
+                The above results are with NanoZip multithreading disabled.
+            </p>
+        </section>
+
+        <section id="text-compression">
+            <h2>Text Compression</h2>
+            <p>
+                Much of the original work in NanoZip is built around text compression. Below is a comparison of NanoZip with other text compressors:
+            </p>
+            <table>
+                <tr>
+                    <th>Compressor</th>
+                    <th>Compressed Size (MB)</th>
+                    <th>Compression Time (s)</th>
+                    <th>Decompression Time (s)</th>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cc</td>
+                    <td>19.6</td>
+                    <td>112</td>
+                    <td>111</td>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cO</td>
+                    <td>21.0</td>
+                    <td>8.3</td>
+                    <td>5.3</td>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -co</td>
+                    <td>21.7</td>
+                    <td>4.5</td>
+                    <td>2.5</td>
+                </tr>
+                <tr>
+                    <td>7-zip 9.12 -mx</td>
+                    <td>27.5</td>
+                    <td>117</td>
+                    <td>2.2</td>
+                </tr>
+                <tr>
+                    <td>bzip2 1.0.5</td>
+                    <td>28.2</td>
+                    <td>11.8</td>
+                    <td>5.3</td>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cD</td>
+                    <td>28.5</td>
+                    <td>2.9</td>
+                    <td>0.5</td>
+                </tr>
+                <tr>
+                    <td>rar 4.2 -m5</td>
+                    <td>31.1</td>
+                    <td>29.7</td>
+                    <td>0.9</td>
+                </tr>
+                <tr>
+                    <td>gzip 1.3.3 -9</td>
+                    <td>37.9</td>
+                    <td>12.7</td>
+                    <td>1.16</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="chess-compression">
+            <h2>Chess Compression</h2>
+            <p>
+                NanoZip understands chess game notation (1. e4 e5...) and outperforms on such data. Below is a comparison of NanoZip with other compressors for a 100 MB chess file:
+            </p>
+            <table>
+                <tr>
+                    <th>Compressor</th>
+                    <th>Compressed Size (MB)</th>
+                    <th>Compression Time (s)</th>
+                    <th>Decompression Time (s)</th>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cO</td>
+                    <td>11.8</td>
+                    <td>10.7</td>
+                    <td>3.1</td>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -co</td>
+                    <td>12.7</td>
+                    <td>5.7</td>
+                    <td>1.9</td>
+                </tr>
+                <tr>
+                    <td>7-zip 9.12 -mx</td>
+                    <td>19.5</td>
+                    <td>94.2</td>
+                    <td>1.8</td>
+                </tr>
+                <tr>
+                    <td>bzip2 1.0.5</td>
+                    <td>19.9</td>
+                    <td>14.8</td>
+                    <td>4.5</td>
+                </tr>
+                <tr>
+                    <td>rar 4.2 -m5</td>
+                    <td>23.9</td>
+                    <td>30.8</td>
+                    <td>0.7</td>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cd</td>
+                    <td>24.0</td>
+                    <td>1.1</td>
+                    <td>0.5</td>
+                </tr>
+                <tr>
+                    <td>gzip 1.3.3 -9</td>
+                    <td>29.8</td>
+                    <td>13.3</td>
+                    <td>1.0</td>
+                </tr>
+            </table>
+            <p>
+                No illegal moves are checked nor is there an integrated chess engine, hence the results could be improved.
+            </p>
+        </section>
+
+        <section id="multimedia-compression">
+            <h2>Multimedia Compression</h2>
+            <p>
+                NanoZip algorithms handle linear sequences (e.g. 'abcdef...', 'x0u1a2p3...') embedded in heterogeneous data. Below is a comparison for a 700 MB example:
+            </p>
+            <table>
+                <tr>
+                    <th>Compressor</th>
+                    <th>Compressed Size (MB)</th>
+                    <th>Compression Time (s)</th>
+                    <th>Decompression Time (s)</th>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cc</td>
+                    <td>126</td>
+                    <td>1213</td>
+                    <td>1174</td>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cO</td>
+                    <td>128</td>
+                    <td>507</td>
+                    <td>120</td>
+                </tr>
+                <tr>
+                    <td>uharc 0.6b -mx</td>
+                    <td>161</td>
+                    <td>698</td>
+                    <td>572</td>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -co</td>
+                    <td>162</td>
+                    <td>117</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td>7-zip 9.12 -mx</td>
+                    <td>162</td>
+                    <td>154</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cDP</td>
+                    <td>165</td>
+                    <td>52</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cD</td>
+                    <td>188</td>
+                    <td>21</td>
+                    <td>2.9</td>
+                </tr>
+                <tr>
+                    <td>rar 4.2 -m5</td>
+                    <td>198</td>
+                    <td>51.5</td>
+                    <td>6.7</td>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cd</td>
+                    <td>213</td>
+                    <td>10.5</td>
+                    <td>2.6</td>
+                </tr>
+                <tr>
+                    <td>bzip2 1.0.5</td>
+                    <td>240</td>
+                    <td>91</td>
+                    <td>36</td>
+                </tr>
+                <tr>
+                    <td>gzip 1.3.3 -9</td>
+                    <td>247</td>
+                    <td>162</td>
+                    <td>7.3</td>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cf</td>
+                    <td>255</td>
+                    <td>2.88</td>
+                    <td>2.77</td>
+                </tr>
+                <tr>
+                    <td>lzop 1.03 -1</td>
+                    <td>343</td>
+                    <td>6.27</td>
+                    <td>2.16</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="parallel-compression">
+            <h2>Parallel Compression Algorithms</h2>
+            <p>
+                NanoZip's algorithms are memory-efficient and recognize similarities between data blocks, even if they are far apart. 
+                This effect is amplified in the parallel compression algorithms. Below is an example of compressing 800 MB of compiler 
+                binaries using 500 MB of memory:
+            </p>
+            <table>
+                <tr>
+                    <th>Compressor</th>
+                    <th>Compressed Size (MB)</th>
+                    <th>Compression Time (s)</th>
+                    <th>Decompression Time (s)</th>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cO</td>
+                    <td>43</td>
+                    <td>351</td>
+                    <td>32</td>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cdP</td>
+                    <td>65</td>
+                    <td>23.7</td>
+                    <td>2.7</td>
+                </tr>
+                <tr>
+                    <td>7-zip 9.12 -mx</td>
+                    <td>97</td>
+                    <td>222</td>
+                    <td>9.8</td>
+                </tr>
+                <tr>
+                    <td>nz 0.09 -cF</td>
+                    <td>99</td>
+                    <td>7.8</td>
+                    <td>5.7</td>
+                </tr>
+                <tr>
+                    <td>uharc 0.6b -mx</td>
+                    <td>101</td>
+                    <td>539</td>
+                    <td>401</td>
+                </tr>
+                <tr>
+                    <td>rar 4.2 -m5</td>
+                    <td>143</td>
+                    <td>50.5</td>
+                    <td>5.2</td>
+                </tr>
+                <tr>
+                    <td>gzip 1.3.3 -9</td>
+                    <td>228</td>
+                    <td>113</td>
+                    <td>8.1</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="architecture">
+            <h2>Archiver Architecture</h2>
+            <p>
+                NanoZip outperforms other file archivers using a single thread only. The file archiver architecture allows parallel processing on multiple levels:
+            </p>
+            <ol>
+                <li>Independent threads for file reading and writing.</li>
+                <li>The compression algorithms are designed in such a way that parts of the compression can be done ahead, and other threads finish or complement the compression that was begun earlier.</li>
+                <li>Some algorithms (depending on the data content) run with full CPU utilization regardless of the number of processors available.</li>
+                <li>High-level archiver architecture allows the entire process to be run in multiple branches (controlled by the '-p' switch) by splitting the input task into any arbitrary number of blocks.</li>
+            </ol>
+        </section>
+
+        <section id="nanozipltcb">
+            <h2>NanoZipLTCB</h2>
+            <p>
+                NanoZipLTCB is a subset of the NanoZip compression library to highlight the performance for compressing plaintext with a large memory model (multi-gigabyte). It compresses at the rate of 16 MB/s and decompresses at 32 MB/s on modern hardware with compression ratios over 6.2:1. No other file compressor compresses (and/or decompresses) faster at these compression ratios. It only accepts files from the <a href="http://mattmahoney.net/dc/text.html">large text compression benchmark</a>.
+            </p>
+            <p>
+                <a href="nanozipltcb-0.09.linux64.zip">nanozipltcb-0.09.linux64.zip</a> (2010) 0a587667 2c9a497c 2b61338a 87ac98a0 80f484f7 eaa1317e 7fe6d995 3cd29e21
+            </p>
+        </section>
+
+        <section id="suffix-sorting">
+            <h2>Suffix Sorting</h2>
+            <p>
+                NanoZip has an original high-performance algorithm for computing the Burrows-Wheeler Transform (BWT). Below is a comparison of suffix array construction algorithms:
+            </p>
+            <table>
+                <tr>
+                    <th>Algorithm</th>
+                    <th>chr22.dna</th>
+                    <th>etext99</th>
+                    <th>gcc-3.0.tar</th>
+                    <th>howto</th>
+                    <th>jdk13c</th>
+                    <th>linux-2.4.5.tar</th>
+                    <th>rctail96</th>
+                    <th>rfc</th>
+                    <th>sprot34.dat</th>
+                    <th>w3c2</th>
+                    <th>Total Seconds</th>
+                </tr>
+                <tr>
+                    <td>Archon4r0</td>
+                    <td>6.030</td>
+                    <td>22.160</td>
+                    <td>13.856</td>
+                    <td>5.806</td>
+                    <td>18.106</td>
+                    <td>18.174</td>
+                    <td>32.490</td>
+                    <td>20.736</td>
+                    <td>22.832</td>
+                    <td>27.264</td>
+                    <td>187.454</td>
+                </tr>
+                <tr>
+                    <td>Deep-Shallow</td>
+                    <td>7.514</td>
+                    <td>34.264</td>
+                    <td>35.822</td>
+                    <td>8.288</td>
+                    <td>32.182</td>
+                    <td>25.912</td>
+                    <td>62.502</td>
+                    <td>29.666</td>
+                    <td>32.096</td>
+                    <td>54.682</td>
+                    <td>322.928</td>
+                </tr>
+                <tr>
+                    <td>MSufSort3</td>
+                    <td>7.132</td>
+                    <td>24.106</td>
+                    <td>14.952</td>
+                    <td>5.672</td>
+                    <td>11.314</td>
+                    <td>19.890</td>
+                    <td>21.060</td>
+                    <td>17.936</td>
+                    <td>23.352</td>
+                    <td>17.090</td>
+                    <td>162.504</td>
+                </tr>
+                <tr>
+                    <td>divsufsort2</td>
+                    <td>5.362</td>
+                    <td>18.064</td>
+                    <td>10.084</td>
+                    <td>5.320</td>
+                    <td>9.010</td>
+                    <td>14.290</td>
+                    <td>17.914</td>
+                    <td>15.658</td>
+                    <td>17.404</td>
+                    <td>13.486</td>
+                    <td>126.592</td>
+                </tr>
+                <tr>
+                    <td>R08</td>
+                    <td>5.985</td>
+                    <td>13.823</td>
+                    <td>14.533</td>
+                    <td>4.034</td>
+                    <td>8.268</td>
+                    <td>18.121</td>
+                    <td>15.225</td>
+                    <td>16.728</td>
+                    <td>15.735</td>
+                    <td>12.750</td>
+                    <td>125.202</td>
+                </tr>
+            </table>
+            <p>
+                The table shows approximated Manzini Corpus results based on Yuta Mori's timings for the latest suffix array construction algorithms. With the exception of MSufSort3, all algorithms work with similar space requirements. The R08 timings are adjusted by the ratio of MSufSort3 timings done with the same hardware as R08.
+            </p>
+        </section>
+
+        <section id="bwmonstr">
+            <h2>BWMonstr</h2>
+            <p>
+                BWMonstr has the highest compression ratio amongst pure Burrows-Wheeler compression algorithms. It achieves the result of 203476 (2.1174 bpb) for book1 from the Calgary corpus, which is better than most PPM and CM compression algorithms. The program has the lowest known space requirements (~0.6N) for computing both BWT transform and post-transform compression. This is an unoptimized demo compressor (with command-line interface only). It is not intended for practical file compression purposes.
+            </p>
+            <p>
+                <a href="bwmonstr.002.win32.zip">bwmonstr.002.win32.zip</a> (2009) 77895735 0d7f1cc7 367ce2c8 154389b4 87b0e7d6 2046bff9 3273b538 b0b9b891
+            </p>
+            <p>
+                See <a href="http://compressionratings.com/bwt.html">detailed compression comparison</a>.
+            </p>
+            <table>
+                <tr>
+                    <th>Algorithm</th>
+                    <th>BS99</th>
+                    <th>F07</th>
+                    <th>D05</th>
+                    <th>R08</th>
+                </tr>
+                <tr>
+                    <td>bib</td>
+                    <td>1.91</td>
+                    <td>1.926</td>
+                    <td>1.887</td>
+                    <td>1.795</td>
+                </tr>
+                <tr>
+                    <td>book1</td>
+                    <td>2.27</td>
+                    <td>2.356</td>
+                    <td>2.264</td>
+                    <td>2.147</td>
+                </tr>
+                <tr>
+                    <td>book2</td>
+                    <td>1.96</td>
+                    <td>2.012</td>
+                    <td>1.953</td>
+                    <td>1.840</td>
+                </tr>
+                <tr>
+                    <td>geo</td>
+                    <td>4.16</td>
+                    <td>4.268</td>
+                    <td>4.129</td>
+                    <td>3.967</td>
+                </tr>
+                <tr>
+                    <td>news</td>
+                    <td>2.42</td>
+                    <td>2.464</td>
+                    <td>2.397</td>
+                    <td>2.268</td>
+                </tr>
+                <tr>
+                    <td>obj1</td>
+                    <td>3.73</td>
+                    <td>3.765</td>
+                    <td>3.692</td>
+                    <td>3.584</td>
+                </tr>
+                <tr>
+                    <td>obj2</td>
+                    <td>2.45</td>
+                    <td>2.433</td>
+                    <td>2.411</td>
+                    <td>2.226</td>
+                </tr>
+                <tr>
+                    <td>paper1</td>
+                    <td>2.41</td>
+                    <td>2.439</td>
+                    <td>2.390</td>
+                    <td>2.274</td>
+                </tr>
+                <tr>
+                    <td>paper2</td>
+                    <td>2.36</td>
+                    <td>2.387</td>
+                    <td>2.329</td>
+                    <td>2.230</td>
+                </tr>
+                <tr>
+                    <td>pic</td>
+                    <td>0.72</td>
+                    <td>0.753</td>
+                    <td>0.714</td>
+                    <td>0.688</td>
+                </tr>
+                <tr>
+                    <td>progc</td>
+                    <td>2.45</td>
+                    <td>2.476</td>
+                    <td>2.422</td>
+                    <td>2.307</td>
+                </tr>
+                <tr>
+                    <td>progl</td>
+                    <td>1.68</td>
+                    <td>1.697</td>
+                    <td>1.660</td>
+                    <td>1.576</td>
+                </tr>
+                <tr>
+                    <td>progp</td>
+                    <td>1.68</td>
+                    <td>1.702</td>
+                    <td>1.666</td>
+                    <td>1.579</td>
+                </tr>
+                <tr>
+                    <td>trans</td>
+                    <td>1.46</td>
+                    <td>1.488</td>
+                    <td>1.451</td>
+                    <td>1.354</td>
+                </tr>
+                <tr>
+                    <td>Average bpb</td>
+                    <td>2.26</td>
+                    <td>2.298</td>
+                    <td>2.240</td>
+                    <td>2.131</td>
+                </tr>
+            </table>
+            <p>
+                BS99: The best results of Balkenhol. [1]<br>
+                F07: Fenwick's best results. [2]<br>
+                D05: The best Deorowicz results. [3] Fenwick (2007) describes this as "the best Burrows-Wheeler result to date."<br>
+                R08: This work (from 2008) is part of BWMonstr and NanoZip.
+            </p>
+            <p>
+                The current versions of both BWMonstr and NanoZip outperform R08.
+            </p>
+            <p>
+                [1] B. Balkenhol, Y. M. Shtarkov, "One attempt of a compression algorithm using the BWT", Faculty of Mathematics, University of Bielefeld, 1999.<br>
+                [2] P. Fenwick, "Burrows-Wheeler Compression: Principles and Reflections." Theoretical Computer Science Vol 387 (2007) No. 3 pp 200-219.<br>
+                [3] S. Deorowicz, "Context exhumation after the Burrows-Wheeler transform", Information Processing Letters, Vol 95, No 1, pp 313-320, 2005.<br>
+                [4] Y. Mori, <a href="http://code.google.com/p/libdivsufsort/wiki/SACA_Benchmarks">SACA Benchmarks</a>.
+            </p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>
+                For inquiries, you can reach out to Sami Runsas at 
+                <a href="mailto:sami.runsas@gmail.com">sami.runsas@gmail.com</a>.
+            </p>
+        </section>
+
+        <section id="in-memory">
+            <h2>In Memory of Sami Runsas</h2>
+            <p>
+                Sami Runsas, the creator of NanoZip, passed away between 2013 and 2014 at the age of 30. 
+                His work on NanoZip and other compression algorithms has left a lasting impact on the field 
+                of data compression. We honor his contributions and remember him as a brilliant mind who 
+                pushed the boundaries of what was possible in software development.
+            </p>
+            <p>
+                <em>"Sami, your work continues to inspire us. Rest in peace."</em>
+            </p>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2023 NanoZip. All rights reserved.</p>
+        <p><a href="http://www.nanozip.net">Visit the original NanoZip website</a></p>
+    </footer>
+</body>
+</html>

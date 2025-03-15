@@ -1,0 +1,238 @@
+<!--
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+!-->
+<!doctype html public "-//W3C//DTD HTML 4.01//EN"><html><head><meta http-equiv="content-type" content="text/html;charset=iso-8859-1"><meta name="robots" content="index, follow"><meta name="revisit-after" content="14 days"><meta name="author" content="Sami Runsas"><meta name="keywords" content="compression software"><title>NanoZip</title><style type="text/css" media=all>
+table td {text-align:right}
+</style></head><body>
+<pre>
+Last updated: June 28, April 30, 2014 (site layout+comparisons)
+<a name=nanozip></a><h2>NanoZip</h2>
+NanoZip is an experimental file archiver software. It consists
+of several original file compression algorithms, put into
+a single file archiver program aiming for high data compression
+efficiency. It has many experimental features, such as fine
+granular (i.e. not block based) parallel compression algorithms.
+<p><a name=download></a>The latest NanoZip (2011) for 32-bit Windows, includes
+graphical user interface and command line interface. The other
+versions include only the command line interfaces.
+
+  <a href=nanozip-0.09a.win32.zip>nanozip-0.09a.win32.zip</a> d7b43d2f fecb19e2 ba36c5e5 da8cca6e c254f07b 3c132779 c3b82a2a 2bd8f114 (sha256)
+  <a href=nanozip-0.09a.win64.zip>nanozip-0.09a.win64.zip</a> 0bc7cfd0 5dec5417 d04d397c 937baf44 d0e4897d 97ae16c1 7ed8b130 c754d276
+<a href=nanozip-0.09a.linux32.zip>nanozip-0.09a.linux32.zip</a> db94977e 80bbab02 d122e7bd 6f6f83c7 767931a4 014bde8e ef1b2a5a 9ae7dde1
+<a href=nanozip-0.09a.linux64.zip>nanozip-0.09a.linux64.zip</a> e66dd3f9 e0a1da91 37a1483c 36c9979f 3ff1dbf1 175876a0 47504ee4 ff4b2cd7
+<!--
+  <a href=nanozip-0.08a.win32.zip>nanozip-0.08a.win32.zip</a> 7ce082ef 7f882381 65100206 7d9d0e48 68146264 73b325f1 9d53212b ca279aaa
+  <a href=nanozip-0.08a.win64.zip>nanozip-0.08a.win64.zip</a> 49133012 3a2ac769 f6498773 5b71baa2 92deb174 c3afcdda 4fd71e90 721466bf
+<a href=nanozip-0.08a.linux32.zip>nanozip-0.08a.linux32.zip</a> 2f171ca2 cfd6a3fc 7edafc7f 9b0d2ee9 2d39bc90 b8d338ea 5b25535c ea98072f
+<a href=nanozip-0.08a.linux64.zip>nanozip-0.08a.linux64.zip</a> 3c984d60 9c51e400 90d7e875 6add83b2 2d89cbf5 02ad9289 6cbf6ce1 711c87ff
+  <a href=nanozip-0.07a.win32.zip>nanozip-0.07a.win32.zip</a> a451da0e 0d5ba431 7a582cbc 41839929 2d09278f cdbac93c 3b21ebea d0af7dc3
+  <a href=nanozip-0.07a.win64.zip>nanozip-0.07a.win64.zip</a> 5c7f0f00 fdb4df34 0fd6a085 31450f26 4aa06a4d 5cc08e6e 21733624 176b6a83
+<a href=nanozip-0.07a.linux32.zip>nanozip-0.07a.linux32.zip</a> 41811cc5 3b451813 5e1a6be4 5d8215e4 f1c0570c 300697ab 9f905104 9d8962bb
+<a href=nanozip-0.07a.linux64.zip>nanozip-0.07a.linux64.zip</a> 046ce5b0 380ff239 8090197e ec2a7517 b75248b3 0349f124 130dda28 57fff028
+  <a href=nanozip-0.06a.win32.zip>nanozip-0.06a.win32.zip</a> 1e567fc1 1d83fe16 a499641a 010bb627 67f5240d eb235484 f7e1c287 ff1f5f65
+  <a href=nanozip-0.06a.win64.zip>nanozip-0.06a.win64.zip</a> 1be84f03 2fd7de60 c85d6b41 57cf70f9 35f7c5ee c8e026d4 2b18ee85 194b2ef7
+<a href=nanozip-0.06a.linux32.zip>nanozip-0.06a.linux32.zip</a> 383e50f8 82449bf3 6f63295d 6176f1b1 b4b656f9 5b146149 03560d6d 87cffae8
+<a href=nanozip-0.06a.linux64.zip>nanozip-0.06a.linux64.zip</a> 4a589077 3458e82a 9157ebdd 767486b8 a2d3b9fb 58b65680 121a1870 98706d95
+  <a href=nanozip-0.05a.win32.zip>nanozip-0.05a.win32.zip</a> 9fcb93a8 3515a0a7 023da53d 2f71fb48 67111984 3fc4493a 66fc95b7 f720cb49
+!-->
+<p>Thanks for helping me with the website <a href="http://www.dreamhost.com/donate.cgi?id=17736" rel=nofollow>bills</a>.
+<p>NanoZip (nz) has good compression performance over wide range of
+file types. For example: compressing 500 MB Linux binary distribution:
+<table><tr><td></td><td>compressed<br>size (mb)</td><td>time<br>(seconds)</td><td>decompression<br>time (sec)</td></tr>
+<tr><td>nz 0.09 -cc</td><td>73</td><td>724</td><td>722</td></tr>
+<tr><td>nz 0.09 -cO</td><td>83</td><td>164</td><td>37</td></tr>
+<tr><td>nz 0.09 -co</td><td>91</td><td>67</td><td>10</td></tr>
+<tr><td>uharc 0.6b -mx</td><td>96</td><td>448</td><td>363</td></tr>
+<tr><td>7-zip 9.12 -mx</td><td>99</td><td>187</td><td>9</td></tr>
+<tr><td>nz 0.09 -cD</td><td>117</td><td>23</td><td>2</td></tr>
+<tr><td>rar 4.2 -m5</td><td>117</td><td>41</td><td>4</td></tr>
+<tr><td>nz 0.09 -cd</td><td>131</td><td>6.5</td><td>1.9</td></tr>
+<tr><td>gzip 1.3.3 -9</td><td>159</td><td>84</td><td>5</td></tr>
+<tr><td>nz 0.09 -cf</td><td>169</td><td>1.9</td><td>2</td></tr>
+<tr><td>gzip 1.3.3 -3</td><td>170</td><td>15</td><td>5</td></tr></table>
+The '-cO' algorithm in NanoZip is the strongest known asymmetric
+compression algorithm. No other algorithm decompresses faster at
+this compression ratio.
+See <a href="http://compressionratings.com">thorough compression comparison</a> with other file compressors.
+
+<a name="audio"></a><h2>Audio compression</h2>
+NanoZip has special algorithms for compressing audio data.
+An example case compressing 211 MB WAV files:
+<table><tr><td></td><td>compressed<br>size (mb)</td><td>time<br>(seconds)</td><td>decompression<br>time (sec)</td></tr>
+<tr><td>nz 0.09 -cd</td><td>123</td><td>9.3</td><td>7.2</td></tr>
+<tr><td>flac 1.2.1 -8</td><td>124</td><td>28</td><td>3.4</td></tr>
+<tr><td>nz 0.09 -cf</td><td>128</td><td>3.1</td><td>3.1</td></tr>
+<tr><td>flac 1.2.1 -1</td><td>134</td><td>4.1</td><td>3.2</td></tr></table>
+The above results are with NanoZip multithreading disabled.
+
+<a name="text"></a><h2>Text compression</h2>
+Much of the original work in NanoZip is build around text
+compression. An example case compressing 100 MB text file:
+<table><tr><td></td><td>compressed<br>size (mb)</td><td>time<br>(seconds)</td><td>decompression<br>time (sec)</td></tr>
+<tr><td>nz 0.09 -cc</td><td>19.6</td><td>112</td><td>111</td></tr>
+<tr><td>nz 0.09 -cO</td><td>21.0</td><td>8.3</td><td>5.3</td></tr>
+<tr><td>nz 0.09 -co</td><td>21.7</td><td>4.5</td><td>2.5</td></tr>
+<tr><td>7-zip 9.12 -mx</td><td>27.5</td><td>117</td><td>2.2</td></tr>
+<tr><td>bzip2 1.0.5</td><td>28.2</td><td>11.8</td><td>5.3</td></tr>
+<tr><td>nz 0.09 -cD</td><td>28.5</td><td>2.9</td><td>0.5</td></tr>
+<tr><td>rar 4.2 -m5</td><td>31.1</td><td>29.7</td><td>0.9</td></tr>
+<tr><td>gzip 1.3.3 -9</td><td>37.9</td><td>12.7</td><td>1.16</td></tr>
+</table>
+
+<a name="chess"></a><h2>Chess compression</h2>
+NanoZip understands chess game notation (1. e4 e5...) and
+outperforms on such data. 100 MB example file:
+<table><tr><td></td><td>compressed<br>size (mb)</td><td>time<br>(seconds)</td><td>decompression<br>time (sec)</td></tr>
+<tr><td>nz 0.09 -cO</td><td>11.8</td><td>10.7</td><td>3.1</td></tr>
+<tr><td>nz 0.09 -co</td><td>12.7</td><td>5.7</td><td>1.9</td></tr>
+<tr><td>7-zip 9.12 -mx</td><td>19.5</td><td>94.2</td><td>1.8</td></tr>
+<tr><td>bzip2 1.0.5</td><td>19.9</td><td>14.8</td><td>4.5</td></tr>
+<tr><td>rar 4.2 -m5</td><td>23.9</td><td>30.8</td><td>0.7</td></tr>
+<tr><td>nz 0.09 -cd</td><td>24.0</td><td>1.1</td><td>0.5</td></tr>
+<tr><td>gzip 1.3.3 -9</td><td>29.8</td><td>13.3</td><td>1.0</td></tr></table>
+No illegal moves are checked nor is there an integrated
+chess engine, hence the results could be improved.
+
+<a name="multimedia"></a><h2>Multimedia compression</h2>
+NanoZip algorithms handle linear sequences (e.g. 'abcdef...',
+'x0u1a2p3...') embedded in heterogeneous data. 700 MB example:
+<table><tr><td></td><td>compressed<br>size (mb)</td><td>time<br>(seconds)</td><td>decompression<br>time (sec)</td></tr>
+<tr><td>nz 0.09 -cc</td><td>126</td><td>1213</td><td>1174</td></tr>
+<tr><td>nz 0.09 -cO</td><td>128</td><td>507</td><td>120</td></tr>
+<tr><td>uharc 0.6b -mx</td><td>161</td><td>698</td><td>572</td></tr>
+<tr><td>nz 0.09 -co</td><td>162</td><td>117</td><td>18</td></tr>
+<tr><td>7-zip 9.12 -mx</td><td>162</td><td>154</td><td>16</td></tr>
+<tr><td>nz 0.09 -cDP</td><td>165</td><td>52</td><td>5</td></tr>
+<tr><td>nz 0.09 -cD</td><td>188</td><td>21</td><td>2.9</td></tr>
+<tr><td>rar 4.2 -m5</td><td>198</td><td>51.5</td><td>6.7</td></tr>
+<tr><td>nz 0.09 -cd</td><td>213</td><td>10.5</td><td>2.6</td></tr>
+<tr><td>bzip2 1.0.5</td><td>240</td><td>91</td><td>36</td></tr>
+<tr><td>gzip 1.3.3 -9</td><td>247</td><td>162</td><td>7.3</td></tr>
+<tr><td>nz 0.09 -cf</td><td>255</td><td>2.88</td><td>2.77</td></tr>
+<tr><td>lzop 1.03 -1</td><td>343</td><td>6.27</td><td>2.16</td></tr></table>
+
+<a name="parallel"></a><h2>Parallel compression algorithms and space use</h2>
+NanoZip algorithms are memory frugal and recognize
+similarities between two data blocks even if the
+distance between them is large. This effect is amplified
+in the parallel compression algorithms. (-cdP below
+and -cDP in earlier example.) No such algorithms are
+known in the computer science literature. These do not
+split the data into blocks, but compress the input
+as a continuous stream while utilizing multiple
+processors. 800 MB example case (compiler binaries)
+using 500 MB memory:
+<table><tr><td></td><td>compressed<br>size (mb)</td><td>time<br>(seconds)</td><td>decompression<br>time (sec)</td></tr>
+<tr><td>nz 0.09 -cO</td><td>43</td><td>351</td><td>32</td></tr>
+<tr><td>nz 0.09 -cdP</td><td>65</td><td>23.7</td><td>2.7</td></tr>
+<tr><td>7-zip 9.12 -mx</td><td>97</td><td>222</td><td>9.8</td></tr>
+<tr><td>nz 0.09 -cF</td><td>99</td><td>7.8</td><td>5.7</td></tr>
+<tr><td>uharc 0.6b -mx</td><td>101</td><td>539</td><td>401</td></tr>
+<tr><td>rar 4.2 -m5</td><td>143</td><td>50.5</td><td>5.2</td></tr>
+<tr><td>gzip 1.3.3 -9</td><td>228</td><td>113</td><td>8.1</td></tr>
+</table>
+
+<a name="architecture"></a><h2>Archiver architecture</h2>
+NanoZip outperforms other file archivers using a single
+thread only. The file archiver architecture allows
+parallel processing on multiple levels.
+
+1) Independent threads for file reading and writing
+2) The compression algorithms are designed in such way
+   that parts of the compression can be done ahead and
+   other threads finish or compliment the compression
+   that was began earlier.
+3) Some algorithms (depending on the data content) run
+   with full CPU utilization regardless of number of
+   processors available.
+4) High level archiver architecture allows the entire
+   process to be run in multiple branches (controlled
+   by the '-p' -switch) by splitting the input task in
+   any arbitrary number of blocks.
+
+<a name="nanozipltcb"></a><h2>NanoZipLTCB</h2>
+NanoZipLTCB is a subset of NanoZip compression library to highlight
+the performance for compressing plaintext with large memory model
+(multi-gigabyte). It compresses at the rate of 16 MB/s and
+decompresses 32 MB/s on modern hardware with the compression ratios
+over 6.2:1. No other file compressor compresses (and/or decompress)
+faster at these compression ratios. It only accepts the files from the
+<a href="http://mattmahoney.net/dc/text.html">large text compression benchmark</a>.
+<a href=nanozipltcb-0.09.linux64.zip>nanozipltcb-0.09.linux64.zip</a> (2010) 0a587667 2c9a497c 2b61338a 87ac98a0 80f484f7 eaa1317e 7fe6d995 3cd29e21
+
+<a name="research"></a><a name="suffix"></a><h2>Suffix sorting</h2>
+NanoZip has original high performance algorithm for computing
+Burrows Wheeler Transform (BWT).
+<table><tr><td></td><td>Archon4r0</td><td>Deep-Shallow</td><td>MSufSort3</td><td>divsufsort2</td><td>R08</td></tr><tr><td>chr22.dna</td><td>6.030</td><td>7.514</td><td>7.132</td><td>5.362</td><td>5.985</td></tr><tr><td>etext99</td><td>22.160</td><td>34.264</td><td>24.106</td><td>18.064</td><td>13.823</td></tr><tr><td>gcc-3.0.tar</td><td>13.856</td><td>35.822</td><td>14.952</td><td>10.084</td><td>14.533</td></tr><tr><td>howto</td><td>5.806</td><td>8.288</td><td>5.672</td><td>5.320</td><td>4.034</td></tr><tr><td>jdk13c</td><td>18.106</td><td>32.182</td><td>11.314</td><td>9.010</td><td>8.268</td></tr><tr><td>linux-2.4.5.tar</td><td>18.174</td><td>25.912</td><td>19.890</td><td>14.290</td><td>18.121</td></tr><tr><td>rctail96</td><td>32.490</td><td>62.502</td><td>21.060</td><td>17.914</td><td>15.225</td></tr><tr><td>rfc</td><td>20.736</td><td>29.666</td><td>17.936</td><td>15.658</td><td>16.728</td></tr><tr><td>sprot34.dat</td><td>22.832</td><td>32.096</td><td>23.352</td><td>17.404</td><td>15.735</td></tr><tr><td>w3c2</td><td>27.264</td><td>54.682</td><td>17.090</td><td>13.486</td><td>12.750</td></tr><tr><td>total seconds</td><td>187.454</td><td>322.928</td><td>162.504</td><td>126.592</td><td>125.202</td></tr></table>
+The table shows approximated Manzini Corpus results based on Yuta
+Mori's timings [4] for the latest suffix array construction
+algorithms. With the exception of MSufSort3 all algorithms work
+with similar space requirements. The R08 timings are adjusted by
+the ratio of MSufSort3 timings done with the same hardware as R08.
+
+<a name="bwmonstr"></a><h2>BWMonstr</h2>
+BWMonstr has the highest compression ratio amongst pure Burrows-
+Wheeler compression algorithms. It achieves the result of 203476
+(2.1174 bpb) for book1 from the calgary corpus, which is better
+than most PPM and CM compression algorithms. The program has the
+lowest known space requirements (~0.6N) for computing both BWT
+transform and post-transform compression. This is an unoptimized
+demo compressor (with command line interface only). It is not
+indended for practical file compression purposes.
+<a href=bwmonstr.002.win32.zip>bwmonstr.002.win32.zip</a> (2009) 77895735 0d7f1cc7 367ce2c8 154389b4 87b0e7d6 2046bff9 3273b538 b0b9b891
+See <a href="http://compressionratings.com/bwt.html">detailed compression comparison</a>.
+<table><tr><td></td><td>BS99</td><td>F07</td><td>D05</td><td>R08</td></tr><tr><td>bib</td><td>1.91</td><td>1.926</td><td>1.887</td><td>1.795</td></tr><tr><td>book1</td><td>2.27</td><td>2.356</td><td>2.264</td><td>2.147</td></tr><tr><td>book2</td><td>1.96</td><td>2.012</td><td>1.953</td><td>1.840</td></tr><tr><td>geo</td><td>4.16</td><td>4.268</td><td>4.129</td><td>3.967</td></tr><tr><td>news</td><td>2.42</td><td>2.464</td><td>2.397</td><td>2.268</td></tr><tr><td>obj1</td><td>3.73</td><td>3.765</td><td>3.692</td><td>3.584</td></tr><tr><td>obj2</td><td>2.45</td><td>2.433</td><td>2.411</td><td>2.226</td></tr><tr><td>paper1</td><td>2.41</td><td>2.439</td><td>2.390</td><td>2.274</td></tr><tr><td>paper2</td><td>2.36</td><td>2.387</td><td>2.329</td><td>2.230</td></tr><tr><td>pic</td><td>0.72</td><td>0.753</td><td>0.714</td><td>0.688</td></tr><tr><td>progc</td><td>2.45</td><td>2.476</td><td>2.422</td><td>2.307</td></tr><tr><td>progl</td><td>1.68</td><td>1.697</td><td>1.660</td><td>1.576</td></tr><tr><td>progp</td><td>1.68</td><td>1.702</td><td>1.666</td><td>1.579</td></tr><tr><td>trans</td><td>1.46</td><td>1.488</td><td>1.451</td><td>1.354</td></tr><tr><td>average bpb</td><td>2.26</td><td>2.298</td><td>2.240</td><td>2.131</td></tr></table>
+BS99 The best results of Balkenhol. [1]
+F07 Fenwick's best results. [2]
+D05 The best Deorowicz results. [3] Fenwick (2007) describes
+this as "the best Burrows Wheeler result to date."
+R08 This work (from 2008) is part of BWMonstr and NanoZip.
+
+The current versions of both BWMonstr and NanoZip outperform R08.
+
+[1] B. Balkenhol, Y. M. Shtarkov, "One attempt of a compression algorithm using the BWT", Falculty of Mathematics, University of Bielefeld, 1999<br>[2] P. Fenwick, "Burrows Wheeler Compression: Principles and Reflections." Theoretical Computer Science Vol 387 (2007) No. 3 pp 200-219<br>[3] S. Deorowicz "Context exhumation after the Burrows Wheeler transform", Information Processing Letters, Vol 95, No 1, pp 313-320, 2005<br>[4] Y. Mori http://code.google.com/p/libdivsufsort/wiki/SACA_Benchmarks
+<p><a name="contact"></a>Write to sami runsas at&nbsp;googl&#x65;'s gm&#97;il.
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEcBAEBCAAGBQJTrqpUAAoJEPNTTkedZlMjHXMH/j+C59HdUjUTHJ72Mu2YJ457
+yKtvfitYejiKSehf84pB68xuy83xUly/dlW/sr5AvsEl3H5oV96sT6tPWRBWY79B
+k1+joFD5/qnLk2b605sphDQ7fe8YraTpt4Wb38R1yRS2iTJjtVF4ll7swBfXhDOs
+Jl1fmO+o1GD8161+Xo4TD4QQYT/w+GSSMLTeBDL742cjdHFEN00GsImVVRv3hwgH
+pXMNlNYYmk5WzDypcTl/0ig0E+dnp3dMkZ536l585TZsJhybR37W8QTPcPnHFXJj
+l29b/LHhilX6tGr+kM7hpFF0SE3tAzE7a6qXnZ6zDmiy8fNfL4LkDO7A6laHnM4=
+=yGyd
+-----END PGP SIGNATURE-----
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mQENBFM1WCUBCADAg+qyNZy0+H58x5PjMyhp8wjBT2Qj6x1zoY268YMtnYTL6dcZ
+g6ah904awjwA6stFmX+tbDF11qnMnzcC2VSqNpRvARmNyAryekZU9oH9FdXYCa/M
+QMfDY+bDWJs0QSNlFL76IzmB3J86DMXcfINQN8ikwsL046F4rP0OStDkUqWRIuHQ
+Vig1Q8rM4DxlZZoevL3uRXFAQ4SQdkG8D5SmPRYVXvscQcv5jdX/zie3SvwymQw1
+pIUf5ugCvLzMv+7NA3G5ds6pnZH99WA/nvHKHYUqvIhkNkvEH5LfJ2oc1hRZuWml
+wDgxghjW13nQzSXGVa3THgixeDgjvQpv5acDABEBAAG0BFNhbWmJATgEEwECACIF
+AlNW/OYCGwMGCwkIBwMCBhUIAgkKCwQWAgMBAh4BAheAAAoJEPNTTkedZlMj4lAH
+/iUioqcK5mLFZewF8MTYEP/PmZ7nWkY0ORWkFUrtwSucjsaIbQL3BEaN2u/gPNqi
+Ag18SctxOJbEct3EtXbQbp3PQgvxiQoUIuPzJGLjwouD2od60koSj7CorN69Lu0m
+/6r7Cl9AUuE0oij1k53kbznfEzsVOtDg5XaL/TP1PygcrueLDvROCX2sjN/LhWRh
+Nsqh6LAefckzWEiieD6iMPQvKvcodLqgORFYS13OdOOjsdsQn4x+qZ7UmSMKRylW
+Tk/QbouT3LGreE+VA8OCVMM0Bi9rgYiCW7oiPxjHPG6HUNPopK/j7Y0HCWAlFqvT
+Nqu5wbWOynUxNaGHaGysjtW5AQ0EUzVYJQEIANVjTuxE4vEg01MjOOWoyHkHAeNL
+I3/OsH85gmKrSQijMz8xcCykhMZeQk6odcr1A6ANfjUNfC9/qK6bZaCUIQgDmU21
+EdVwXaRWL3mqNOkTv4IyiyzWPYTSTxK9INWk6SD1W7HoVGOk8s1qDb1uLXx9zMl1
+kvStsJS0buHwkQSNPOk32AiR4uBZsfO5ETIQOBee0ae4hHg4e6SWa7wayi8rlbF2
+STxdiZg/ArOG2d90gX1koibbnYw27MJwigdy6W8ICYnD3EVNUBNb82eC0CE304y7
+8GsEnhcBPHZ2vtjOlur4h/F6F5EIDCIBY5q3lM7i/GIiHiFHP5mfXiZo79cAEQEA
+AYkBHwQYAQIACQUCUzVYJQIbDAAKCRDzU05HnWZTI7sEB/9YgKWwmQciVTsQmAK+
+73U0lb5PM+46p8LvCs9LTnhv6894asTIRFijHEI0rAvcR4Xwo/RpBrDWh6vu1QYJ
+uPyIFh5GV2/UeZYmLdv+ZAe8W8Qhq4hgMdEu2OqtMl2L++WgNqdcft3ttHdauc8K
+3cMWJKvEpXhQODj2jSr5YCAAVe/DvZgsu3SgKacjtXDxFklrs5qOXZTXvTZc8jab
+EcdAalt5zlFIUY5oXetk62BYy6nXw0BWimLM5hl9YY7ddunBxi4IkYykCQ/EfllW
+lEj0gWW75XrTSNc/3SoNs9asFC+WlnYAx0wtrwh3v7dq39veik3iMRvefk2HEf8j
+UXjK
+=z0+J
+-----END PGP PUBLIC KEY BLOCK-----
+</body>
+</html>
